@@ -7,6 +7,7 @@ import tkinter as tk
 from tkinter import ttk
 from tkinter import messagebox
 
+#---------- Colors and Fonts ----------#
 PRIMARY_COLOR = "#ffffff"
 BG_COLOR = "#1B1D1E"
 BTN_COLOR = "#2a2a2a"
@@ -45,6 +46,7 @@ def installSpicetify():
         print(f"Error when executing the command: {e}")
         log("\n——————————————————————————————\n")
 
+#----- Update Spicetify -----#
 def update_spicetify():
     try:
         subprocess.Popen('start cmd /k "spicetify update"', shell=True)
@@ -54,6 +56,7 @@ def update_spicetify():
         log(f"❌ Error when updating: {e}")
         log("\n——————————————————————————————\n")
 
+#----- Reactivate Spicetify -----#
 def reactivate_spicetify():
     try:
         temp_dir = tempfile.gettempdir()
@@ -70,6 +73,7 @@ def reactivate_spicetify():
         log(f"❌ Error during activation: {e}")
         log("\n——————————————————————————————\n")
 
+#----- Update Spotify -----#
 def update_spotify():
     consent = messagebox.askyesno(
         "Your consent is required",
@@ -115,6 +119,7 @@ def  show_contact():
     os.system("start \"\" https://discord.com/users/860122608682795028")
     os.system("start \"\" https://www.reddit.com/u/itsmarian_mc/")
 
+#----- Credits -----#
 def show_credits():
     log("")
     log("Author: itsmarian")
@@ -128,10 +133,11 @@ def show_credits():
     log("")
     log("Thank you to \"customtkinter\" for the modern and customizable GUI design based on Tkinter!")
     log("")
-    log("The code for this programm is Open Source can be found here: ")
+    log("The code for this programm is Open Source can be found here: https://github.com/itsmarianmc/itsmarian/tree/main/assets/public/spicetify/Spicetify_Manager_by_itsmarian.py")
     log("")
     log("\n——————————————————————————————\n")
 
+#----- Licence -----#
 def show_licence():
     log("")
     log("Copyright 2025 itsmarian & Projekt City Ltd.")
@@ -143,6 +149,7 @@ def show_licence():
     log("")
     log("\n——————————————————————————————\n")
 
+#----- About -----#
 def openAbout():
     log("")
     log("About Spicetify:")
@@ -177,6 +184,7 @@ def create_separator(master):
     sep = tk.Label(master, text="——————————————————————————————", bg=BG_COLOR, fg="#555555", font=("Segoe UI", 10, "bold"))
     sep.pack(pady=4)
 
+#---------- Icon ----------#
 icon_url = "http://raw.githubusercontent.com/itsmarianmc/itsmarian/refs/heads/main/assets/public/spicetify/spicetify-icon.ico"
 
 temp_dir = tempfile.gettempdir()
@@ -212,6 +220,7 @@ tk.Label(root, text="🎵 Spicetify & Spotify Manager\n[by itsmarian]", bg=BG_CO
 button_frame = tk.Frame(root, bg=BG_COLOR)
 button_frame.pack(pady=10, padx=30, fill="x")
 
+#----- UI ------#
 create_button(button_frame, "Install Spicetify", installSpicetify)
 create_button(button_frame, "Update Spicetify", update_spicetify)
 create_button(button_frame, "Reactivate Spicetify", reactivate_spicetify)
@@ -243,3 +252,11 @@ scrollbar.pack(side="right", fill="y")
 log_box.config(yscrollcommand=scrollbar.set)
 
 root.mainloop()
+
+#
+# Copyright (C) 2025 itsmarian | All rights reserved!
+# Copyright (C) 2025 Projekt City Ltd. | All rights reserved!
+# The code is distributed via Projekt City Ldt. and is the property of Projekt City Ldt.
+# Code is distributed under the Apache 2.0 licence
+# For more information see "Licence" in the App
+#
