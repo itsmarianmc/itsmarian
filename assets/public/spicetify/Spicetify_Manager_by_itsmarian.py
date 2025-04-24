@@ -133,7 +133,7 @@ def show_credits():
     log("")
     log("Thank you to \"customtkinter\" for the modern and customizable GUI design based on Tkinter!")
     log("")
-    log("The code for this programm is Open Source can be found here: https://github.com/itsmarianmc/itsmarian/tree/main/assets/public/spicetify/Spicetify_Manager_by_itsmarian.py")
+    log("The code for this program is Open Source can be found here: https://github.com/itsmarianmc/itsmarian/tree/main/assets/public/spicetify/Spicetify_Manager_by_itsmarian.py")
     log("")
     log("\n——————————————————————————————\n")
 
@@ -183,6 +183,9 @@ def create_button(master, text, command):
 def create_separator(master):
     sep = tk.Label(master, text="——————————————————————————————", bg=BG_COLOR, fg="#555555", font=("Segoe UI", 10, "bold"))
     sep.pack(pady=4)
+def create_text(master):
+    sep = tk.Label(master, text="Spicetify and its contributors are not affiliated with Spotify!", bg=BG_COLOR, fg="#555555", font=("Segoe UI", 10, "bold"))
+    sep.pack(pady=4)
 
 #---------- Icon ----------#
 icon_url = "http://raw.githubusercontent.com/itsmarianmc/itsmarian/refs/heads/main/assets/public/spicetify/spicetify-icon.ico"
@@ -231,6 +234,7 @@ create_button(button_frame, "About", openAbout)
 create_button(button_frame, "Contact", show_contact)
 create_button(button_frame, "Credits", show_credits)
 create_button(button_frame, "Licence", show_licence)
+create_text(button_frame)
 
 tk.Label(root, text="📋 LOG:", bg=BG_COLOR, fg=TEXT_COLOR,
          anchor='w', font=("Segoe UI", 11, "bold")).pack(padx=30, anchor="w", pady=(10, 0))
